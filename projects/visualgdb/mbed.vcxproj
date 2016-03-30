@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="DEBUG_STM32|Win32">
+      <Configuration>DEBUG_STM32</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="RELEASE_STM32|Win32">
+      <Configuration>RELEASE_STM32</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{263B5F22-EF8E-4C3D-9E83-2C1405FD1F4F}</ProjectGuid>
+    <RootNamespace>mbed</RootNamespace>
+    <Keyword>MakeFileProj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RELEASE_STM32|Win32'" Label="Configuration">
+    <ConfigurationType>Makefile</ConfigurationType>
+    <PlatformToolset>v120</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='DEBUG_STM32|Win32'" Label="Configuration">
+    <ConfigurationType>Makefile</ConfigurationType>
+    <PlatformToolset>v120</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='RELEASE_STM32|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='DEBUG_STM32|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>12.0.21005.1</_ProjectFileVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='DEBUG_STM32|Win32'">
+    <OutDir>$(Configuration)\</OutDir>
+    <IntDir>$(Configuration)\</IntDir>
+    <NMakeBuildCommandLine>"$(VISUALGDB_DIR)\VisualGDB.exe" /build "$(ProjectPath)" "/solution:$(SolutionPath)" "/config:$(Configuration)" "/platform:$(Platform)"</NMakeBuildCommandLine>
+    <NMakeReBuildCommandLine>"$(VISUALGDB_DIR)\VisualGDB.exe" /rebuild "$(ProjectPath)" "/solution:$(SolutionPath)" "/config:$(Configuration)" "/platform:$(Platform)"</NMakeReBuildCommandLine>
+    <NMakeCleanCommandLine>"$(VISUALGDB_DIR)\VisualGDB.exe" /clean "$(ProjectPath)" "/solution:$(SolutionPath)" "/config:$(Configuration)" "/platform:$(Platform)"</NMakeCleanCommandLine>
+    <NMakeOutput>$(ProjectDir)mbed-DEBUG_STM32.vgdbsettings</NMakeOutput>
+    <NMakeIncludeSearchPath>build\ublox-c029-gcc\yotta_config.h;$(VISUALGDB_DIR)\gcc_compat.h;cb_board_config.h;include;source\config;source\cb_main;source\cb_emb_bt_stack\include;source\cb_wlan\include;source\cb_wlan\driver\include;source\cb_wlan\driver\softmac\include;source\cb_rtsl_stm32\source;source\cb_rtsl\include;source\cb_rtsl_utils\include;ublox-odin-w2-drivers;test\udp-time-client-pan;test\udp-time-client-wifi;yotta_modules\mbed-drivers;yotta_modules\mbed-hal-st-stm32cubef4\mbed-hal-st-stm32cubef4;yotta_modules\cmsis-core;yotta_modules\cmsis-core\cmsis-core;yotta_modules\cmsis-core-stm32f4\cmsis-core-stm32f4;yotta_modules\cmsis-core-stm32f429xi\cmsis-core-stm32f429xi;yotta_modules\mbed-hal;yotta_modules\mbed-hal\mbed-hal;yotta_modules\mbed-hal-st-stm32f4\mbed-hal-st-stm32f4;yotta_modules\mbed-hal-st-stm32f429zi;yotta_modules\mbed-hal-st-stm32f429zi\mbed-hal-st-stm32f429zi;yotta_modules\compiler-polyfill;yotta_modules\core-util;yotta_modules\cmsis-core-stm32f4;yotta_modules\minar;yotta_modules\minar-platform;yotta_modules\minar-platform-mbed;yotta_modules\sal-stack-lwip-ublox-odin-w2\sal-stack-lwip-ublox-odin-w2;yotta_modules\sal-stack-lwip-ublox-odin-w2\sal-stack-lwip-ublox-odin-w2\arch;yotta_modules\sal-stack-lwip-ublox-odin-w2\source\lwip\include\lwip;yotta_modules\sal-stack-lwip-ublox-odin-w2\source\lwip\include\netif;yotta_modules\sal-stack-lwip-ublox-odin-w2\source\lwip\include\posix;yotta_modules\sockets;yotta_modules\sal;yotta_modules\ublox-odin-w2-lwip-adapt\ublox-odin-w2-lwip-adapt;.\;yotta_modules\ublox-odin-w2-lwip-adapt;yotta_modules\sal-stack-lwip-ublox-odin-w2;yotta_modules\mbed-hal-st;yotta_modules\ualloc;yotta_modules\uvisor-lib;yotta_modules\mbed-hal-st-stm32f4;yotta_modules\dlmalloc;C:\Program Files (x86)\GNU Tools ARM Embedded\4.8 2013q4\arm-none-eabi\include</NMakeIncludeSearchPath>
+    <NMakeForcedIncludes>$(ProjectDir)\gcc_DEBUG_STM32.h;$(VISUALGDB_DIR)\gcc_compat.h;$(NMakeForcedIncludes)</NMakeForcedIncludes>
+    <NMakePreprocessorDefinitions>__VisualGDB_CFG_DEBUG_STM32;$(NMakePreprocessorDefinitions)</NMakePreprocessorDefinitions>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RELEASE_STM32|Win32'">
+    <OutDir>$(Configuration)\</OutDir>
+    <IntDir>$(Configuration)\</IntDir>
+    <NMakeBuildCommandLine>"$(VISUALGDB_DIR)\VisualGDB.exe" /build "$(ProjectPath)" "/solution:$(SolutionPath)" "/config:$(Configuration)" "/platform:$(Platform)"</NMakeBuildCommandLine>
+    <NMakeReBuildCommandLine>"$(VISUALGDB_DIR)\VisualGDB.exe" /rebuild "$(ProjectPath)" "/solution:$(SolutionPath)" "/config:$(Configuration)" "/platform:$(Platform)"</NMakeReBuildCommandLine>
+    <NMakeCleanCommandLine>"$(VISUALGDB_DIR)\VisualGDB.exe" /clean "$(ProjectPath)" "/solution:$(SolutionPath)" "/config:$(Configuration)" "/platform:$(Platform)"</NMakeCleanCommandLine>
+    <NMakeOutput>$(ProjectDir)mbed-RELEASE_STM32.vgdbsettings</NMakeOutput>
+    <NMakeIncludeSearchPath>build\ublox-c029-gcc\yotta_config.h;$(VISUALGDB_DIR)\gcc_compat.h;cb_board_config.h;include;source\config;source\cb_main;source\cb_emb_bt_stack\include;source\cb_wlan\include;source\cb_wlan\driver\include;source\cb_wlan\driver\softmac\include;source\cb_rtsl_stm32\source;source\cb_rtsl\include;source\cb_rtsl_utils\include;ublox-odin-w2-drivers;test\udp-time-client-pan;test\udp-time-client-wifi;yotta_modules\mbed-drivers;yotta_modules\mbed-hal-st-stm32cubef4\mbed-hal-st-stm32cubef4;yotta_modules\cmsis-core;yotta_modules\cmsis-core\cmsis-core;yotta_modules\cmsis-core-stm32f4\cmsis-core-stm32f4;yotta_modules\cmsis-core-stm32f429xi\cmsis-core-stm32f429xi;yotta_modules\mbed-hal;yotta_modules\mbed-hal\mbed-hal;yotta_modules\mbed-hal-st-stm32f4\mbed-hal-st-stm32f4;yotta_modules\mbed-hal-st-stm32f429zi;yotta_modules\mbed-hal-st-stm32f429zi\mbed-hal-st-stm32f429zi;yotta_modules\compiler-polyfill;yotta_modules\core-util;yotta_modules\cmsis-core-stm32f4;yotta_modules\minar;yotta_modules\minar-platform;yotta_modules\minar-platform-mbed;yotta_modules\sal-stack-lwip-ublox-odin-w2\sal-stack-lwip-ublox-odin-w2;yotta_modules\sal-stack-lwip-ublox-odin-w2\sal-stack-lwip-ublox-odin-w2\arch;yotta_modules\sal-stack-lwip-ublox-odin-w2\source\lwip\include\lwip;yotta_modules\sal-stack-lwip-ublox-odin-w2\source\lwip\include\netif;yotta_modules\sal-stack-lwip-ublox-odin-w2\source\lwip\include\posix;yotta_modules\sockets;yotta_modules\sal;yotta_modules\ublox-odin-w2-lwip-adapt\ublox-odin-w2-lwip-adapt;.\;yotta_modules\ublox-odin-w2-lwip-adapt;yotta_modules\sal-stack-lwip-ublox-odin-w2;yotta_modules\mbed-hal-st;yotta_modules\ualloc;yotta_modules\uvisor-lib;yotta_modules\mbed-hal-st-stm32f4;yotta_modules\dlmalloc;C:\Program Files (x86)\GNU Tools ARM Embedded\4.8 2013q4\arm-none-eabi\include</NMakeIncludeSearchPath>
+    <NMakeForcedIncludes>$(ProjectDir)\gcc_RELEASE_STM32.h;$(VISUALGDB_DIR)\gcc_compat.h;$(NMakeForcedIncludes)</NMakeForcedIncludes>
+    <NMakePreprocessorDefinitions>__VisualGDB_CFG_RELEASE_STM32;$(NMakePreprocessorDefinitions)</NMakePreprocessorDefinitions>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
