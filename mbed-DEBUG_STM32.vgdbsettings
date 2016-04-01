@@ -47,7 +47,7 @@
       </Environment>
     </CleanCommand>
     <MainBuildDirectory>$(ProjectDir)\build</MainBuildDirectory>
-    <AbsoluteTargetPath>C:\git\ARMmbed\test_setups\odin-drv\ublox-odin-w2-drivers-confidential\build\ublox-c029-gcc\test\ublox-odin-w2-drivers-test-udp-time-client-wifi</AbsoluteTargetPath>
+    <AbsoluteTargetPath>$(BuildDir)\ublox-c029-gcc\source\mbed-example-odin-w2-wifi</AbsoluteTargetPath>
     <AutoUpdateMakefiles>false</AutoUpdateMakefiles>
   </Build>
   <Debug xsi:type="com.visualgdb.debug.embedded">
