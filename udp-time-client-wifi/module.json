@@ -14,7 +14,12 @@
     "network"
   ],
   "author": "andreas.larsson@u-blox.com",
-  "licenses": [],
+  "licenses": [
+    {
+      "url": "https://spdx.org/licenses/Apache-2.0",
+      "type": "Apache-2.0"
+    }
+  ],
   "dependencies": {
     "ublox-odin-w2-drivers" : "~0.0.3",
     "sal-stack-lwip-ublox-odin-w2" : "~0.0.2",
