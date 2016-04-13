@@ -25,42 +25,42 @@ The application udp-time-client-wifi will demonstrate how to:
 ### Example source code
 git clone https://github.com/u-blox/mbed-examples-odin-w2.git 
 ### Depending modules 
-git clone https://github.com/u-blox/ublox-odin-w2-drivers-binary.git  
-git clone https://github.com/u-blox/ublox-odin-w2-lwip-adapt.git  
-git clone https://github.com/u-blox/sal-stack-lwip-ublox-odin-w2.git  
-git clone https://github.com/u-blox/target-ublox-odin-w2-gcc.git
+    git clone https://github.com/u-blox/ublox-odin-w2-drivers-binary.git  
+    git clone https://github.com/u-blox/ublox-odin-w2-lwip-adapt.git  
+    git clone https://github.com/u-blox/sal-stack-lwip-ublox-odin-w2.git  
+    git clone https://github.com/u-blox/target-ublox-odin-w2-gcc.git
 
 ## Configuring and building with Yotta
 Yotta is used for building this example. Before building you need to do some configuration.   
 The steps below are to be executed in the yotta console window.
 
 ### Create yotta links for depending modules  
-cd target-ublox-odin-w2-gcc  
-yotta link-target  
-cd ..  
+    cd target-ublox-odin-w2-gcc  
+    yotta link-target  
+    cd ..  
 
-cd ublox-odin-w2-lwip-adapt  
-yotta link  
-cd ..  
+    cd ublox-odin-w2-lwip-adapt  
+    yotta link  
+    cd ..  
 
-cd sal-stack-lwip-ublox-odin-w2  
-yotta link  
-cd ..  
+    cd sal-stack-lwip-ublox-odin-w2  
+    yotta link  
+    cd ..  
 
-cd ublox-odin-w2-drivers-binary   
-yotta link  
-cd .. 
+    cd ublox-odin-w2-drivers-binary   
+    yotta link  
+    cd .. 
 
 ### Link your project to depending modules
-cd mbed-examples-odin-w2  
-cd udp-time-client-wifi  
-yotta link ublox-odin-w2-lwip-adapt  
-yotta link sal-stack-lwip-ublox-odin-w2   
-yotta link ublox-odin-w2-drivers   
+    cd mbed-examples-odin-w2  
+    cd udp-time-client-wifi  
+    yotta link ublox-odin-w2-lwip-adapt  
+    yotta link sal-stack-lwip-ublox-odin-w2   
+    yotta link ublox-odin-w2-drivers   
  
 ### Link and configure your target platform  
-yotta link-target ublox-odin-w2-gcc  
-yotta target ublox-c029-gcc
+    yotta link-target ublox-odin-w2-gcc  
+    yotta target ublox-c029-gcc
 
 ### Preparing configuration file
 A configuration file is needed to be able to build this example application.   
@@ -78,7 +78,10 @@ Include the following to your config.json
 ```
 
 ### Building the example
-Use the following to build: yotta build --config config.json
+Use the following to build:  
+    yotta build --config config.json  
+or for debug build:  
+    yotta build -d --config config.json  
 
 If build is successful you will find the resulting binary in the following location   
 \mbed-examples-odin-w2\udp-time-client-wifi\build\ublox-c029-gcc\source\mbed-example-odin-w2-wifi.bin
@@ -123,7 +126,7 @@ Flow control: none
  
 4. Creating Eclipse project
  - In the yotta console execute the following command from the root folder of your project to create a project file for Eclipse:   
- yotta build --config config.json -G "Eclipse CDT4 - Ninja"
+     yotta build --config config.json -G "Eclipse CDT4 - Ninja"
 
 5. Importing project to Eclipse
  - Use "File/Import/General/Existing Projects into Workspace" to import the project file you just created
