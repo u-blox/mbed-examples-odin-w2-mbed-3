@@ -79,9 +79,9 @@ Include the following to your config.json
 
 ### Building the example
 Use the following to build:  
-    yotta build --config config.json  
+`yotta build --config config.json`  
 or for debug build:  
-    yotta build -d --config config.json  
+`yotta build -d --config config.json`  
 
 If build is successful you will find the resulting binary in the following location   
 \mbed-examples-odin-w2\udp-time-client-wifi\build\ublox-c029-gcc\source\mbed-example-odin-w2-wifi.bin
