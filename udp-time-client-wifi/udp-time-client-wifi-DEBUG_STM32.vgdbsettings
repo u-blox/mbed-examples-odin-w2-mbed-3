@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <VisualGDBProjectSettings2 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <ConfigurationName>RELEASE_STM32</ConfigurationName>
+  <ConfigurationName>DEBUG_STM32</ConfigurationName>
   <Project xsi:type="com.visualgdb.project.embedded">
     <CustomSourceDirectories>
       <Directories />
@@ -13,7 +13,7 @@
     <BuildCommand>
       <SkipWhenRunningCommandList>false</SkipWhenRunningCommandList>
       <Command>yotta</Command>
-      <Arguments>build --config config.json</Arguments>
+      <Arguments>build -d</Arguments>
       <WorkingDirectory>$(ProjectDir)</WorkingDirectory>
       <Environment>
         <Records>
@@ -47,7 +47,7 @@
       </Environment>
     </CleanCommand>
     <MainBuildDirectory>$(ProjectDir)\build</MainBuildDirectory>
-    <AbsoluteTargetPath>$(BuildDir)\ublox-c029-gcc\source\mbed-example-odin-w2-wifi</AbsoluteTargetPath>
+    <AbsoluteTargetPath>$(BuildDir)\ublox-c029-gcc\source\udp-time-client-wifi</AbsoluteTargetPath>
     <AutoUpdateMakefiles>false</AutoUpdateMakefiles>
   </Build>
   <Debug xsi:type="com.visualgdb.debug.embedded">
@@ -150,7 +150,7 @@
     <BuildVariable>
       <Label />
       <Description>target file</Description>
-      <Value>mbed</Value>
+      <Value>udp-time-client-wifi</Value>
       <Name>target</Name>
       <PromoteToEnvironment>false</PromoteToEnvironment>
     </BuildVariable>

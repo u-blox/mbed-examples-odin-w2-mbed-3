@@ -5,7 +5,7 @@ VisualStudioVersion = 12.0.21005.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{FE230187-5E03-4CCD-8C61-7CF0C1546E73}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "mbed", "mbed.vcxproj", "{263B5F22-EF8E-4C3D-9E83-2C1405FD1F4F}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "udp-time-client-wifi", "udp-time-client-wifi.vcxproj", "{263B5F22-EF8E-4C3D-9E83-2C1405FD1F4F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
