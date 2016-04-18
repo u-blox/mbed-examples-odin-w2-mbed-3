@@ -13,7 +13,7 @@
     <BuildCommand>
       <SkipWhenRunningCommandList>false</SkipWhenRunningCommandList>
       <Command>yotta</Command>
-      <Arguments>build -d --config config.json</Arguments>
+      <Arguments>build -d</Arguments>
       <WorkingDirectory>$(ProjectDir)</WorkingDirectory>
       <Environment>
         <Records>
