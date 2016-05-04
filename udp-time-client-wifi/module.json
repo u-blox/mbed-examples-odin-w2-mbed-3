@@ -1,6 +1,6 @@
 {
   "name": "mbed-example-odin-w2-wifi",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "u-blox ODIN-W2 Wi-Fi example",
   "private": true,
   "keywords": [
