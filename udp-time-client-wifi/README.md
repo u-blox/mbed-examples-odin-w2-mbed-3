@@ -28,17 +28,12 @@ git clone https://github.com/u-blox/mbed-examples-odin-w2.git
     git clone https://github.com/u-blox/ublox-odin-w2-drivers-binary.git  
     git clone https://github.com/u-blox/ublox-odin-w2-lwip-adapt.git  
     git clone https://github.com/u-blox/sal-stack-lwip-ublox-odin-w2.git  
-    git clone https://github.com/u-blox/target-ublox-odin-w2-gcc.git
 
 ## Configuring and building with Yotta
 Yotta is used for building this example. Before building you need to do some configuration.   
 The steps below are to be executed in the yotta console window.
 
 ### Create yotta links for depending modules  
-    cd target-ublox-odin-w2-gcc  
-    yotta link-target  
-    cd ..  
-
     cd ublox-odin-w2-lwip-adapt  
     yotta link  
     cd ..  
@@ -58,9 +53,8 @@ The steps below are to be executed in the yotta console window.
     yotta link sal-stack-lwip-ublox-odin-w2   
     yotta link ublox-odin-w2-drivers   
  
-### Link and configure your target platform  
-    yotta link-target ublox-odin-w2-gcc  
-    yotta target ublox-c029-gcc
+### Configure your target platform  
+    yotta target ublox-evk-odin-w2-gcc
 
 ### Preparing configuration file
 A configuration file is needed to be able to build this example application.   
@@ -84,7 +78,7 @@ or for debug build:
 `yotta build -d`  
 
 If build is successful you will find the resulting binary in the following location   
-\mbed-examples-odin-w2\udp-time-client-wifi\build\ublox-c029-gcc\source\mbed-example-odin-w2-wifi.bin
+\mbed-examples-odin-w2\udp-time-client-wifi\build\ublox-evk-odin-w2-gcc\source\mbed-example-odin-w2-wifi.bin
 
 ## Running the application
 When you plugin your EVK-ODIN-W2 board to your computer it should turn up as a USB mass storage device. To program the application binary to your board simply copy and paste the application binary to your mbed USB mass storage device.  
@@ -136,7 +130,7 @@ Flow control: none
 6. Setup debugging in your Eclipse project
  - Right click on project in Project Explorer and select "Debug As.../ Debug Configurations..."
  - Select "GDB OpenOCD Debugging" to create a new configuration for this project
- - Under the "Main" find "C/C++ Application" and select the ELF file for you project. The ELF is located under \build\"your target platform"\source\ and has the same name as your application binary, but is bigger. (e.g. C:\git\EVK-ODIN-W262_test\mbed-examples-odin-w2\udp-time-client-wifi\build\ublox-c029-gcc\source\ublox-odin-w2-drivers-test-udp-time-client-wifi)
+ - Under the "Main" find "C/C++ Application" and select the ELF file for you project. The ELF is located under \build\"your target platform"\source\ and has the same name as your application binary, but is bigger. (e.g. C:\git\EVK-ODIN-W262_test\mbed-examples-odin-w2\udp-time-client-wifi\build\ublox-evk-odin-w2-gcc\source\ublox-odin-w2-drivers-test-udp-time-client-wifi)
  - Under the "Debugger" tab find "OpenOCD Setup/Config Options" and copy paste the following   
   -f "${openocd_path}\\..\scripts\interface\stlink-v2-1.cfg" -f "${openocd_path}\\..\scripts\target\stm32f4x_stlink.cfg" -c init -c "reset init"
  - Under the "Debugger" tab find "GDBClient Setup/Executable" and point to the cross compiler (e.g. "C:\yotta\gcc\bin\arm-none-eabi-gdb.exe")
