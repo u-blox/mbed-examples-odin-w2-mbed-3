@@ -47,7 +47,7 @@
       </Environment>
     </CleanCommand>
     <MainBuildDirectory>$(ProjectDir)\build</MainBuildDirectory>
-    <AbsoluteTargetPath>$(BuildDir)\ublox-c029-gcc\source\udp-time-client-wifi</AbsoluteTargetPath>
+    <AbsoluteTargetPath>$(BuildDir)\ublox-evk-odin-w2-gcc\source\udp-time-client-wifi</AbsoluteTargetPath>
     <AutoUpdateMakefiles>false</AutoUpdateMakefiles>
   </Build>
   <Debug xsi:type="com.visualgdb.debug.embedded">
