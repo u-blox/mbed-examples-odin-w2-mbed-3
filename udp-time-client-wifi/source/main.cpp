@@ -39,7 +39,7 @@
 #include <string.h>
 
 #include "mbed-drivers/mbed.h"
-#include "mbed-drivers/test_env.h"
+#include "greentea-client/test_env.h"
 #include "sockets/TCPStream.h"
 #include "sal/test/ctest_env.h"
 #include "minar/minar.h"
@@ -138,8 +138,8 @@ public:
     {
         _port = port;
 
-	    socket_error_t err = _usock.open(SOCKET_AF_INET4);
-	    TEST_EQ(err, SOCKET_ERROR_NONE);
+        socket_error_t err = _usock.open(SOCKET_AF_INET4);
+        TEST_EQ(err, SOCKET_ERROR_NONE);
 
         err = _usock.resolve(host_addr,UDPSocket::DNSHandler_t(this, &UDPTimeClient::onDNS));
         if(!TEST_EQ(err, SOCKET_ERROR_NONE)) {
@@ -190,7 +190,7 @@ protected:
 static void terminate(bool status, UDPTimeClient* client)
 {
     delete client;
-    MBED_HOSTTEST_RESULT(status);
+    GREENTEA_TESTSUITE_RESULT(status);
 }
 
 static void scheduledConnectWpa2()
@@ -361,10 +361,6 @@ void app_start(int argc, char *argv[]) {
 
     cb_int32 wlanTargetId = cbMAIN_initWlan();
 
-    MBED_HOSTTEST_TIMEOUT(30);
-    MBED_HOSTTEST_SELECT(tcpecho_client_auto);
-    MBED_HOSTTEST_DESCRIPTION(TCP echo client);
-    MBED_HOSTTEST_START("NET_4");
     socket_error_t err = lwipv4_socket_init();
     TEST_EQ(err, SOCKET_ERROR_NONE);
 
@@ -376,10 +372,12 @@ void app_start(int argc, char *argv[]) {
     startParams.deviceSpecific.ODIN_W26X.txPowerSettings.medTxPowerLevel = cbWLAN_TX_POWER_AUTO;
     startParams.deviceSpecific.ODIN_W26X.txPowerSettings.maxTxPowerLevel = cbWLAN_TX_POWER_AUTO;
 
+    //GREENTEA_SETUP(60, "default_auto");
+
     cbIP_init();
 
     cbWLAN_registerStatusCallback(handleStatusIndication, NULL);
-    cbWLAN_start(wlanTargetId,&startParams);
+    cbMAIN_startWlan(wlanTargetId,&startParams);
 
     _timeClient = new UDPTimeClient(SOCKET_STACK_LWIP_IPV4);
 }
