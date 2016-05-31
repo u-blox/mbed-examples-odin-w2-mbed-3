@@ -77,8 +77,8 @@ Use the following to build for release:
 or for debug build:  
 `yotta build -d`  
 
-If build is successful you will find the resulting binary in the following location   
-\mbed-examples-odin-w2\udp-time-client-wifi\build\ublox-evk-odin-w2-gcc\source\mbed-example-odin-w2-wifi.bin
+If build is successful you will find the resulting binary in the following location:   
+mbed-examples-odin-w2\udp-time-client-wifi\build\ublox-evk-odin-w2-gcc\source\udp-time-client-wifi.bin
 
 ## Running the application
 When you plugin your EVK-ODIN-W2 board to your computer it should turn up as a USB mass storage device. To program the application binary to your board simply copy and paste the application binary to your mbed USB mass storage device.  
