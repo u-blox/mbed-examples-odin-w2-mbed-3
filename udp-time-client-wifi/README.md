@@ -46,16 +46,16 @@ The steps below are to be executed in the yotta console window.
     yotta link  
     cd .. 
 
-### Link your project to depending modules
+### Configure your target platform  
     cd mbed-examples-odin-w2  
     cd udp-time-client-wifi  
+    yotta target ublox-evk-odin-w2-gcc
+    
+### Link your project to depending modules
     yotta link ublox-odin-w2-lwip-adapt  
     yotta link sal-stack-lwip-ublox-odin-w2   
     yotta link ublox-odin-w2-drivers   
  
-### Configure your target platform  
-    yotta target ublox-evk-odin-w2-gcc
-
 ### Preparing configuration file
 A configuration file is needed to be able to build this example application.   
 Create the file "config.json" and place it the root folder of your project.   
