@@ -1,5 +1,5 @@
 # udp-time-client-wifi
-Example to show how to use Wi-Fi on the ODIN-W2 for ARM mbed.
+Example to show how to use Wi-Fi on the ODIN-W2 for Arm Mbed.
 
 The application udp-time-client-wifi will demonstrate how to:
 
@@ -81,7 +81,7 @@ If build is successful you will find the resulting binary in the following locat
 mbed-examples-odin-w2\udp-time-client-wifi\build\ublox-evk-odin-w2-gcc\source\udp-time-client-wifi.bin
 
 ## Running the application
-When you plugin your EVK-ODIN-W2 board to your computer it should turn up as a USB mass storage device. To program the application binary to your board simply copy and paste the application binary to your mbed USB mass storage device.  
+When you plugin your EVK-ODIN-W2 board to your computer it should turn up as a USB mass storage device. To program the application binary to your board simply copy and paste the application binary to your Mbed USB mass storage device.  
 
 After successful programming reset your device and the application will start executing.   
 
@@ -106,7 +106,7 @@ Flow control: none
  - May require you to download Oracle JRE (verified with v1.8.0)
  - During installation select the option to install the "Eclipse IDE for C/C++ Developers"   
  
-2. Install ARM plugins for Eclipse 
+2. Install Arm plugins for Eclipse 
  - http://gnuarmeclipse.github.io/plugins/install/   
  The "Quick links" method described on this page is recommended. However we experienced problems with this on some systems. If you encounter such problems then we suggest you to follow the "The local archive way" as described further down on the above mentioned page.   
  We verified this step with the following zip-archive:   
@@ -124,7 +124,7 @@ Flow control: none
 
 5. Importing project to Eclipse
  - Use "File/Import/General/Existing Projects into Workspace" to import the project file you just created
- - Select the root folder of your ARM mbed project.   
+ - Select the root folder of your Arm Mbed project.   
  - Note that many of the files are auto-generated with yotta and modifications might get overwritten.   
 
 6. Setup debugging in your Eclipse project
