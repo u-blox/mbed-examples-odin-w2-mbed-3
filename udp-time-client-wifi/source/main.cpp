@@ -48,9 +48,12 @@
 
 #include "sal-stack-lwip-ublox-odin-w2/lwipv4_init.h"
 #include "ublox-odin-w2-drivers/cb_wlan.h"
+#include "ublox-odin-w2-drivers/cb_wlan_driver_config.h"
 #include "ublox-odin-w2-drivers/cb_wlan_types.h"
 #include "ublox-odin-w2-drivers/cb_main.h"
 #include "ublox-odin-w2-lwip-adapt/cb_ip.h"
+
+#include "cb_target.h"
 
 using namespace mbed::util;
 using namespace mbed::Sockets::v0;
@@ -67,13 +70,13 @@ using namespace mbed::Sockets::v0;
 #define UDP_TIME_CLIENT_BUFFER_SIZE 64
 
 #ifndef YOTTA_CFG_TEST_TIME_SRV_NAME
-#define YOTTA_CFG_TEST_TIME_SRV_NAME "nist-time-server.eoni.com"
+#define YOTTA_CFG_TEST_TIME_SRV_NAME "time-b-g.nist.gov"
 #endif
 #ifndef YOTTA_CFG_TEST_WIFI_SSID
 #define YOTTA_CFG_TEST_WIFI_SSID "my_ssid"
 #endif
 #ifndef YOTTA_CFG_TEST_WIFI_PASSPHRASE
-#define YOTTA_CFG_TEST_WIFI_PASSPHRASE "my_passphrase"
+#define YOTTA_CFG_TEST_WIFI_PASSPHRASE "my_pass"
 #endif
 
 /*===========================================================================
@@ -366,18 +369,25 @@ void app_start(int argc, char *argv[]) {
 
     cbWLAN_StartParameters startParams;
     memset(&startParams, 0, sizeof(startParams));
-    startParams.disable80211d = FALSE; // The driver must always support this feature
     startParams.deviceType = cbWM_MODULE_ODIN_W26X; // ODIN-W2 is the only applicable for ARM mbed
     startParams.deviceSpecific.ODIN_W26X.txPowerSettings.lowTxPowerLevel = cbWLAN_TX_POWER_AUTO;
     startParams.deviceSpecific.ODIN_W26X.txPowerSettings.medTxPowerLevel = cbWLAN_TX_POWER_AUTO;
     startParams.deviceSpecific.ODIN_W26X.txPowerSettings.maxTxPowerLevel = cbWLAN_TX_POWER_AUTO;
 
+    startParams.deviceSpecific.ODIN_W26X.primaryAntenna = cbWLAN_PRIMARY_ANTENNA_ONE;
+    startParams.deviceSpecific.ODIN_W26X.numberOfAntennas = cbWLAN_ONE_ANTENNA;
+
     //GREENTEA_SETUP(60, "default_auto");
 
-    cbIP_init();
-
     cbWLAN_registerStatusCallback(handleStatusIndication, NULL);
-    cbMAIN_startWlan(wlanTargetId,&startParams);
+
+    // Configure driver with non-default config. This will force
+    // world mode to speed up first connection setup time.
+    cbTARGET_configuration_create();
+    cbTARGET_Handle *targetHandle;
+    targetHandle = cbTARGET_targetResolve(wlanTargetId);
+    cbTARGET_gSet(targetHandle, cbTARGET_GSETTING_FORCE_WORLD_MODE, 1);    
+    cbMAIN_startWlanNoConfig(wlanTargetId,&startParams);
 
     _timeClient = new UDPTimeClient(SOCKET_STACK_LWIP_IPV4);
 }

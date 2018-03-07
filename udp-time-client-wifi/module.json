@@ -1,6 +1,6 @@
 {
   "name": "udp-time-client-wifi",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "u-blox ODIN-W2 Wi-Fi example",
   "private": true,
   "keywords": [
@@ -8,9 +8,7 @@
     "wifi",
     "ble",
     "bluetooth",
-    "ethernet",
     "odin-w2",
-    "c029",
     "network"
   ],
   "author": "andreas.larsson@u-blox.com",
@@ -21,9 +19,9 @@
     }
   ],
   "dependencies": {
-    "ublox-odin-w2-drivers" : "^1.0.0",
-    "sal-stack-lwip-ublox-odin-w2" : "^1.0.0",
-    "ublox-odin-w2-lwip-adapt" : "^1.0.0",
+    "ublox-odin-w2-drivers" : "^2.0.0",
+    "sal-stack-lwip-ublox-odin-w2" : "u-blox/sal-stack-lwip-ublox-odin-w2^1.0.0",
+    "ublox-odin-w2-lwip-adapt" : "u-blox/ublox-odin-w2-lwip-adapt^2.0.1",
     "sal": "^1.0.0",
     "sockets": "^1.0.0"
   },
