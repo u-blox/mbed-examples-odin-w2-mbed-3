@@ -26,20 +26,20 @@ The application udp-time-client-wifi will demonstrate how to:
 git clone https://github.com/u-blox/mbed-examples-odin-w2.git 
 ### Depending modules 
     git clone https://github.com/u-blox/ublox-odin-w2-drivers-binary.git  
-    git clone https://github.com/u-blox/ublox-odin-w2-lwip-adapt.git  
-    git clone https://github.com/u-blox/sal-stack-lwip-ublox-odin-w2.git  
+    git clone https://github.com/u-blox/target-ublox-odin-w2-gcc.git  
+    git clone https://github.com/u-blox/target-st-stm32f429i-disco.git  
 
 ## Configuring and building with Yotta
 Yotta is used for building this example. Before building you need to do some configuration.   
 The steps below are to be executed in the yotta console window.
 
 ### Create yotta links for depending modules  
-    cd ublox-odin-w2-lwip-adapt  
-    yotta link  
+    cd target-ublox-odin-w2-gcc  
+    yotta link-target  
     cd ..  
 
-    cd sal-stack-lwip-ublox-odin-w2  
-    yotta link  
+    cd target-st-stm32f429i-disco  
+    yotta link-target  
     cd ..  
 
     cd ublox-odin-w2-drivers-binary   
@@ -49,8 +49,8 @@ The steps below are to be executed in the yotta console window.
 ### Link your project to depending modules
     cd mbed-examples-odin-w2  
     cd udp-time-client-wifi  
-    yotta link ublox-odin-w2-lwip-adapt  
-    yotta link sal-stack-lwip-ublox-odin-w2   
+    yotta link ublox-odin-w2-gcc  
+    yotta link stm32f429i-disco-gcc   
     yotta link ublox-odin-w2-drivers   
  
 ### Configure your target platform  
