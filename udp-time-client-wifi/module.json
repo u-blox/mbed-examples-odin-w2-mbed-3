@@ -21,9 +21,9 @@
     }
   ],
   "dependencies": {
-    "ublox-odin-w2-drivers" : "^1.0.0",
+    "ublox-odin-w2-drivers" : "^3.0.0",
     "sal-stack-lwip-ublox-odin-w2" : "^1.0.0",
-    "ublox-odin-w2-lwip-adapt" : "^1.0.0",
+    "ublox-odin-w2-lwip-adapt" : "^3.0.0",
     "sal": "^1.0.0",
     "sockets": "^1.0.0"
   },
