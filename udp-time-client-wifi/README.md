@@ -96,7 +96,7 @@ The steps below are to be executed in the yotta console window.
     yotta link mbed-hal-st-stm32f429zi
     yotta link target-st-stm32f429i-disco
     yotta link target-ublox-odin-w2-gcc
-    yotta link ublox-odin-w2-drivers-binary
+    yotta link ublox-odin-w2-drivers
 
 ### Preparing configuration file
 A configuration file is needed to be able to build this example application.   
